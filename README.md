@@ -4,7 +4,7 @@
 
 Workout logger for Galaxy Watch 8: sets, weights, reps, rest timer and heart rate recovery, recorded on the wrist without a phone.
 
-Work in progress. Currently in the sensor spike: checking whether optical heart rate during strength training is good enough to measure recovery between sets.
+Work in progress. The watch app runs a full workout (plan, sets, rest timer, heart rate, crash recovery) and sends finished sessions to the phone, which shows heart rate, rest and recovery per set. Next: validating it in real gym sessions.
 
 ## Structure
 
