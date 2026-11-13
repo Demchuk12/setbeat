@@ -1,0 +1,15 @@
+.gradle/
+.kotlin/
+build/
+local.properties
+.idea/
+*.iml
+captures/
+.DS_Store
+
+.env
+spike-data/
+.venv/
+graphify-out/cache/
+node_modules/
+dist/

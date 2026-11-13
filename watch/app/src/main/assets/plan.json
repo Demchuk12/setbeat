@@ -1,0 +1,10 @@
+{
+  "id": "full-body-a",
+  "name": "Full body A",
+  "exercises": [
+    { "name": "Присідання", "sets": 4, "reps": 6, "weight": 80, "weightStep": 2.5, "restSeconds": 150 },
+    { "name": "Жим лежачи", "sets": 4, "reps": 8, "weight": 60, "weightStep": 2.5, "restSeconds": 120 },
+    { "name": "Тяга в нахилі", "sets": 3, "reps": 10, "weight": 50, "weightStep": 2.5, "restSeconds": 90 },
+    { "name": "Підтягування", "sets": 3, "reps": 8, "weight": 0, "weightStep": 2.5, "restSeconds": 90 }
+  ]
+}

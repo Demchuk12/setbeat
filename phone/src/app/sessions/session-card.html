@@ -1,0 +1,24 @@
+@let s = session();
+<article vdCard interactive>
+  <header vdCardHeader>
+    <h2 vdCardTitle>
+      <a vdCardLink [routerLink]="['/sessions', s.id]">{{ s.planName ?? "Без плану" }}</a>
+    </h2>
+    <p vdCardDescription>{{ s.startedAt | date: "EEEE, d MMMM, HH:mm" }}</p>
+    @if (s.status === "interrupted") {
+      <span vdBadge variant="warning">Перервано</span>
+    }
+  </header>
+
+  @if (hasTrace()) {
+    <vd-sparkline class="trace" label="Пульс за тренування" [values]="s.heartRateTrace" [format]="formatBpm" />
+  }
+
+  <app-session-stats [summary]="s" />
+
+  @if (unreliableHeartRate()) {
+    <footer vdCardFooter>
+      <p class="note">Пульс неточний: лише {{ formatPercent(s.quality.reliableShare) }} надійних вимірів</p>
+    </footer>
+  }
+</article>

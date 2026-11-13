@@ -1,0 +1,39 @@
+<div vdTableScroll aria-label="Підходи">
+  <table vdTable size="sm">
+    <thead>
+      <tr>
+        <th scope="col">Підхід</th>
+        <th scope="col" data-numeric>Відпочинок</th>
+        <th scope="col" data-numeric>HRR60</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (set of sets(); track set.index) {
+        <tr>
+          <th scope="row">
+            <span class="exercise">{{ set.exercise }} {{ set.setInExercise + 1 }}</span>
+            <span class="load">
+              {{ load(set) }}
+              @if (!set.logged) {
+                <span vdBadge>план</span>
+              }
+            </span>
+          </th>
+          <td data-numeric>{{ formatDuration(set.restMs) }}</td>
+          <td data-numeric>{{ hrr60(set) }}</td>
+        </tr>
+      } @empty {
+        <tr>
+          <td vdTableEmpty colspan="3">У цьому тренуванні немає підходів</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
+<p class="note">
+  HRR60 — на скільки ударів за хвилину впав пульс через хвилину після підходу. Рахується, коли відпочинок довший
+  за хвилину і пульс надійний.
+  @if (hasUnlogged()) {
+    «План» — значення не підтвердили на годиннику, тому взято з плану.
+  }
+</p>

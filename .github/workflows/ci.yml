@@ -1,0 +1,62 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  web:
+    name: Analytics and phone web
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run build -w @setbeat/analytics
+      - run: npm test
+      - run: npm run build -w @setbeat/phone
+
+  watch:
+    name: Watch app
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: watch
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: 17
+      - uses: android-actions/setup-android@v4
+      - uses: gradle/actions/setup-gradle@v6
+      - run: ./gradlew lintDebug testDebugUnitTest assembleDebug
+
+  phone-android:
+    name: Phone Android shell
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: 21
+      - uses: android-actions/setup-android@v4
+      - uses: gradle/actions/setup-gradle@v6
+      - run: npm ci
+      - run: npm run build -w @setbeat/analytics
+      - run: npm run sync -w @setbeat/phone
+      - run: ./gradlew testDebugUnitTest assembleDebug
+        working-directory: phone/android

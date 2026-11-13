@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">SetBeat</string>
+    <string name="permission_needed">Потрібен доступ до пульсу</string>
+    <string name="grant">Дозволити</string>
+    <string name="unsupported">Пульс для силового тренування недоступний</string>
+    <string name="channel_name">Тренування</string>
+    <string name="notification_title">Тренування триває</string>
+    <string name="plan_loading">Завантажую план…</string>
+    <string name="plan_error">Не вдалося прочитати план</string>
+    <string name="start_workout">Почати</string>
+    <string name="set_start">Почати підхід</string>
+    <string name="set_end">Кінець підходу</string>
+    <string name="pause">Пауза</string>
+    <string name="resume">Продовжити</string>
+    <string name="finish">Завершити</string>
+    <string name="done">Готово</string>
+    <string name="save">Зберегти</string>
+    <string name="set_of">Підхід %1$d/%2$d</string>
+    <string name="target">%1$s кг × %2$d</string>
+    <string name="sets_line">%1$d × %2$d · %3$s кг</string>
+    <string name="ready">Готовий</string>
+    <string name="rest_over">Час!</string>
+    <string name="next">Далі</string>
+    <string name="plan_done">План виконано</string>
+    <string name="paused">Пауза</string>
+    <string name="completed">Тренування завершено</string>
+    <string name="interrupted">Тренування перервано</string>
+    <string name="summary_sets">Підходів: %d</string>
+    <string name="summary_volume">Обсяг: %s кг</string>
+    <string name="summary_duration">Тривалість: %s</string>
+    <string name="unit_kg">кг</string>
+    <string name="unit_reps">повт.</string>
+    <string name="unit_rpe">RPE</string>
+    <string name="bpm_value">%1$s уд/хв</string>
+</resources>

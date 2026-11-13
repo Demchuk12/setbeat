@@ -1,0 +1,14 @@
+:host {
+  display: block;
+}
+
+.trace {
+  --vd-sparkline-block-size: var(--vd-space-16);
+  --vd-sparkline-ink: var(--vd-color-text-muted);
+}
+
+.note {
+  margin: 0;
+  color: var(--vd-color-text-subtle);
+  font-size: var(--vd-text-sm);
+}

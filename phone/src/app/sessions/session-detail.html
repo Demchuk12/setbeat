@@ -1,0 +1,34 @@
+<main class="page">
+  <a vdButton variant="ghost" size="sm" routerLink="/" class="back">
+    <vd-icon slot="start" name="arrow-left" />
+    Усі тренування
+  </a>
+
+  @if (record(); as r) {
+    <header class="header">
+      <div class="title-row">
+        <h1 class="title">{{ r.summary.planName ?? "Без плану" }}</h1>
+        @if (r.summary.status === "interrupted") {
+          <span vdBadge variant="warning">Перервано</span>
+        }
+      </div>
+      <p class="date">{{ r.summary.startedAt | date: "EEEE, d MMMM, HH:mm" }}</p>
+    </header>
+
+    <app-session-stats [summary]="r.summary" />
+
+    <article vdCard>
+      <app-heart-rate-chart [session]="r.session" [endedAt]="r.summary.endedAt" />
+    </article>
+
+    <section class="sets" aria-labelledby="sets-title">
+      <h2 id="sets-title" class="section-title">Підходи</h2>
+      <app-set-table [sets]="r.summary.sets" />
+    </section>
+  } @else if (store.loaded()) {
+    <section vdEmptyState icon="search">
+      <h1 vdEmptyStateTitle>Тренування не знайдено</h1>
+      <p vdEmptyStateDescription>Можливо, його ще не синхронізовано з годинника.</p>
+    </section>
+  }
+</main>

@@ -1,0 +1,26 @@
+:host {
+  display: grid;
+  gap: var(--vd-space-2);
+}
+
+.exercise {
+  display: block;
+}
+
+.load {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--vd-space-2);
+  color: var(--vd-color-text-muted);
+  font-weight: normal;
+  font-variant-numeric: tabular-nums;
+}
+
+.note {
+  margin: 0;
+  max-inline-size: 70ch;
+  color: var(--vd-color-text-subtle);
+  font-size: var(--vd-text-sm);
+  text-wrap: pretty;
+}
