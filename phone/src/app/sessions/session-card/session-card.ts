@@ -5,8 +5,8 @@ import type { SessionSummary } from "@setbeat/analytics";
 import { VdBadge } from "@vadem/ui/badge";
 import { VdCard, VdCardDescription, VdCardFooter, VdCardHeader, VdCardLink, VdCardTitle } from "@vadem/ui/card";
 import { VdSparkline } from "@vadem/ui/chart";
-import { formatBpm, formatPercent } from "../shared/format";
-import { SessionStats } from "./session-stats";
+import { formatBpm, formatPercent } from "../../shared/format";
+import { SessionStats } from "../session-stats/session-stats";
 
 const RELIABLE_SHARE_WARNING = 0.8;
 

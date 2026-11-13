@@ -21,7 +21,7 @@ Watch (`watch/app/src/main/java/com/vadem/setbeat`), dependencies point down onl
 - `ui/` — Compose screens, `WorkoutViewModel`; no business rules.
 - `AppContainer` — the only place that creates and wires objects.
 
-Phone (`phone/src/app`): routes in `app.routes.ts` (list, `sessions/:id`); `wear/` wraps the native plugin behind the `WEAR_SYNC` token; `sessions/` holds `SessionStore` (state + logic), the two pages and presentational parts (`session-stats`, `heart-rate-chart`, `set-table`); `shared/` has pure helpers. Components never call the plugin directly; metrics come from `@setbeat/analytics`.
+Phone (`phone/src/app`): routes in `app.routes.ts` (list, `sessions/:id`); `wear/` wraps the native plugin behind the `WEAR_SYNC` token; `sessions/` holds `SessionStore` (state + logic) and one folder per component (`session-list/`, `session-detail/`, `session-card/`, `session-stats/`, `heart-rate-chart/`, `set-table/`), each with its template, styles, spec and private helpers; `shared/` has pure helpers. Components never call the plugin directly; metrics come from `@setbeat/analytics`.
 
 Rules: new I/O goes behind a port; one class per responsibility; no global mutable state outside `AppContainer`/explicit event buses; every rule in `domain/` or `workout/` gets a unit test.
 

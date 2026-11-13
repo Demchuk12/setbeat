@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, computed, input } from "@angular/co
 import type { SetMetrics } from "@setbeat/analytics";
 import { VdBadge } from "@vadem/ui/badge";
 import { VdTable, VdTableEmpty, VdTableScroll } from "@vadem/ui/table";
-import { formatDecimal, formatDuration } from "../shared/format";
+import { formatDecimal, formatDuration } from "../../shared/format";
 
 @Component({
   selector: "app-set-table",

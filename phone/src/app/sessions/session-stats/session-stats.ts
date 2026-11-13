@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, computed, input } from "@angular/core";
 import type { SessionSummary } from "@setbeat/analytics";
 import { VdStat } from "@vadem/ui/stat";
-import { formatBpm, formatDuration, formatKilograms, formatNumber } from "../shared/format";
+import { formatBpm, formatDuration, formatKilograms, formatNumber } from "../../shared/format";
 
 @Component({
   selector: "app-session-stats",

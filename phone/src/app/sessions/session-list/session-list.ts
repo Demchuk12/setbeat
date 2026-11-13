@@ -2,12 +2,13 @@ import { ChangeDetectionStrategy, Component, computed, inject, type OnInit } fro
 import { VdBadge, type VdBadgeVariant } from "@vadem/ui/badge";
 import { VdButton } from "@vadem/ui/button";
 import { VdEmptyState, VdEmptyStateDescription, VdEmptyStateTitle } from "@vadem/ui/empty-state";
-import { SessionCard } from "./session-card";
-import { SessionStore } from "./session.store";
+import { VdIcon } from "@vadem/ui/icon";
+import { SessionCard } from "../session-card/session-card";
+import { SessionStore } from "../session.store";
 
 @Component({
   selector: "app-session-list",
-  imports: [SessionCard, VdBadge, VdButton, VdEmptyState, VdEmptyStateDescription, VdEmptyStateTitle],
+  imports: [SessionCard, VdBadge, VdButton, VdEmptyState, VdEmptyStateDescription, VdEmptyStateTitle, VdIcon],
   templateUrl: "./session-list.html",
   styleUrl: "./session-list.css",
   changeDetection: ChangeDetectionStrategy.OnPush,

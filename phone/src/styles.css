@@ -1,5 +1,31 @@
 @import "@vadem/ui/styles.css";
 
+:root {
+  --sb-hue-effort: 65;
+  --sb-chroma-effort: 0.16;
+  --sb-hue-recovery: 215;
+  --sb-chroma-recovery: 0.12;
+
+  --sb-effort-500: oklch(var(--vd-l-500) calc(var(--sb-chroma-effort) * var(--vd-c-500)) var(--sb-hue-effort));
+  --sb-recovery-500: oklch(var(--vd-l-500) calc(var(--sb-chroma-recovery) * var(--vd-c-500)) var(--sb-hue-recovery));
+  --sb-effort-soft: light-dark(
+    color-mix(in oklch, var(--sb-effort-500) 18%, transparent),
+    color-mix(in oklch, var(--sb-effort-500) 14%, transparent)
+  );
+  --sb-recovery-soft: light-dark(
+    color-mix(in oklch, var(--sb-recovery-500) 18%, transparent),
+    color-mix(in oklch, var(--sb-recovery-500) 14%, transparent)
+  );
+}
+
+.vd-chart__range[data-tone="effort"] {
+  --vd-chart-range-fill: var(--sb-effort-soft);
+}
+
+.vd-chart__range[data-tone="recovery"] {
+  --vd-chart-range-fill: var(--sb-recovery-soft);
+}
+
 body {
   margin: 0;
   min-block-size: 100dvh;

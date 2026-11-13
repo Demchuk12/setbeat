@@ -18,7 +18,7 @@
     <app-session-stats [summary]="r.summary" />
 
     <article vdCard>
-      <app-heart-rate-chart [session]="r.session" [endedAt]="r.summary.endedAt" />
+      <app-heart-rate-chart [session]="r.session" [endedAt]="r.summary.endedAt" [sets]="r.summary.sets" />
     </article>
 
     <section class="sets" aria-labelledby="sets-title">

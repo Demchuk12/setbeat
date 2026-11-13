@@ -1,9 +1,9 @@
 import { TestBed } from "@angular/core/testing";
 import { provideRouter } from "@angular/router";
 import { describe, expect, it } from "vitest";
-import { WEAR_SYNC } from "../wear/wear-sync.token";
+import { WEAR_SYNC } from "../../wear/wear-sync.token";
 import { SessionDetail } from "./session-detail";
-import { FakeWearSync, settle } from "./testing/fixtures";
+import { FakeWearSync, settle } from "../testing/fixtures";
 
 async function render(id: string) {
   TestBed.configureTestingModule({ providers: [provideRouter([]), { provide: WEAR_SYNC, useValue: new FakeWearSync() }] });

@@ -33,9 +33,9 @@ shared OKLCH lightness/chroma curve, so they match its contrast at every step.
   pairs drop below 10 and are not used.
 - Effort is close to Vadem `warning` (75) and heart rate to `danger` (25): keep warnings and
   errors as text badges, never as large fills next to workout colors.
-- Watch: `ui/theme/SetBeatTheme.kt` (`WorkoutColors`, `phaseColor`). Phone: add
-  `--sb-hue-effort` / `--sb-hue-recovery` on Vadem's `--vd-l-*` / `--vd-c-*` curve when the first
-  chart uses them; no unused tokens before that.
+- Watch: `ui/theme/SetBeatTheme.kt` (`WorkoutColors`, `phaseColor`). Phone: `src/styles.css`
+  defines `--sb-hue-effort` / `--sb-hue-recovery` on Vadem's public `--vd-l-*` / `--vd-c-*` curve
+  and colors chart ranges with tones `effort` and `recovery`.
 
 ## Vadem UI
 

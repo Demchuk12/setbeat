@@ -6,10 +6,10 @@ import { VdButton } from "@vadem/ui/button";
 import { VdCard } from "@vadem/ui/card";
 import { VdEmptyState, VdEmptyStateDescription, VdEmptyStateTitle } from "@vadem/ui/empty-state";
 import { VdIcon } from "@vadem/ui/icon";
-import { HeartRateChart } from "./heart-rate-chart";
-import { SessionStats } from "./session-stats";
-import { SessionStore } from "./session.store";
-import { SetTable } from "./set-table";
+import { HeartRateChart } from "../heart-rate-chart/heart-rate-chart";
+import { SessionStats } from "../session-stats/session-stats";
+import { SessionStore } from "../session.store";
+import { SetTable } from "../set-table/set-table";
 
 @Component({
   selector: "app-session-detail",

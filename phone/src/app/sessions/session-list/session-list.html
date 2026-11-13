@@ -2,13 +2,16 @@
   <header class="header">
     <div class="title-row">
       <h1 class="title">Тренування</h1>
-      <span vdBadge dot [variant]="watchBadge().variant">{{ watchBadge().text }}</span>
+      <span vdBadge [variant]="watchBadge().variant"><vd-icon name="watch" />{{ watchBadge().text }}</span>
     </div>
     @if (store.watch().kind === "unavailable") {
       <p class="hint">Під'єднай годинник у Galaxy Wearable, щоб сесії приходили на телефон.</p>
     }
     <div class="actions">
-      <button vdButton variant="primary" [loading]="store.syncing()" (click)="store.sync()">Синхронізувати</button>
+      <button vdButton variant="primary" [loading]="store.syncing()" (click)="store.sync()">
+        <vd-icon slot="start" name="refresh-cw" />
+        Синхронізувати
+      </button>
       <p class="hint" role="status">{{ store.message() }}</p>
     </div>
   </header>
@@ -16,7 +19,7 @@
   @for (session of store.sessions(); track session.id) {
     <app-session-card [session]="session" />
   } @empty {
-    <section vdEmptyState icon="activity">
+    <section vdEmptyState icon="heart-pulse">
       <h2 vdEmptyStateTitle>Тут з'являться твої тренування</h2>
       <p vdEmptyStateDescription>Заверши тренування на годиннику, і воно прийде сюди саме.</p>
     </section>
